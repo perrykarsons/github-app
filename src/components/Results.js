@@ -8,8 +8,10 @@ const Result = (props) => {
       repos.data.map((item) => (
         <li key={item.id}>
           <a href={item.html_url} target="_blank" rel="noreferrer">
-            {item.name}
+            {item.full_name}
           </a>
+          <br/>
+          <i>{item.description}</i><br/>
           <br />
           forks: {item.forks_count}
           <br />
@@ -17,13 +19,12 @@ const Result = (props) => {
           <br />
           language: {item.language}
           <br />
-          <br />
         </li>
       ))
     ) : (
       <li>No repos found for this user</li>
     );
-
+console.log(repos)
   return repoList;
 };
 
